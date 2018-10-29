@@ -1,0 +1,20 @@
+/*.iml
+/doc
+/.idea
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+/node_modules
+npm-debug.log
+/.dart_tool
+
+# type script artifacts
+/typings
+
+# ignore build and dist for now
+/dist
+
+# ignore incline compiling
+.pub
+/packages
+pubspec.lock
+.packages

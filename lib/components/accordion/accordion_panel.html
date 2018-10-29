@@ -1,0 +1,16 @@
+<div class="card" [ngClass]="panelClass">
+  <div class="card-header" (click)="toggleOpen($event)">
+    <h5 class="mb-0">
+      <a href>
+        {{heading}}
+        <ng-content select="header"></ng-content>
+      </a>
+    </h5>
+  </div>
+  <div [bsCollapse]="!isOpen">
+    <div class="card-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+  
