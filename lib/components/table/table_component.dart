@@ -170,8 +170,8 @@ class BsTableComponent implements OnInit, OnDestroy {
           print("orderBy ==" + orderBy);
           var comparison; 
           if (orderBy is String &&
-              (orderBy != "batchId" ||
-                  orderBy != "createdDate" ||
+              (orderBy != "batchId" &&
+                  orderBy != "createdDate" &&
                   orderBy != "scheduledDate")) {
             comparison = getData(r1, orderBy).compareTo(getData(r2, orderBy));
           } else if (orderBy is Function) {
