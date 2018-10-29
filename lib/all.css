@@ -11848,7 +11848,7 @@ bs-popover.bs-popover-left-bottom .arrow, bs-popover.bs-popover-right-bottom .ar
   bottom: 0.7em;
 }
 
-bs-table {
+ss-table {
   display: block;
   overflow-x: auto;
   /*
@@ -11866,11 +11866,11 @@ bs-table {
 
   */
 }
-bs-table .tr {
+ss-table .tr {
   display: flex;
 }
-bs-table .th,
-bs-table .td {
+ss-table .th,
+ss-table .td {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
@@ -11881,61 +11881,61 @@ bs-table .td {
   display: flex;
   overflow-x: auto;
 }
-bs-table .thead {
+ss-table .thead {
   background-color: #e9ecef;
 }
-bs-table .thead .th {
+ss-table .thead .th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
 }
-bs-table .tbody {
+ss-table .tbody {
   flex-grow: 1;
   overflow-y: auto;
 }
-bs-table .tbody + .tbody {
+ss-table .tbody + .tbody {
   border-top: 2px solid #dee2e6;
 }
-bs-table.table-sm .th,
-bs-table.table-sm .td {
+ss-table.table-sm .th,
+ss-table.table-sm .td {
   padding: 0.3rem;
 }
-bs-table .th,
-bs-table .td {
+ss-table .th,
+ss-table .td {
   border: 1px solid #dee2e6;
 }
-bs-table .thead .th,
-bs-table .thead .td {
+ss-table .thead .th,
+ss-table .thead .td {
   border-bottom-width: 2px;
 }
-bs-table .tbody .tr:nth-of-type(odd) {
+ss-table .tbody .tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05);
 }
-bs-table .tbody .tr:hover {
+ss-table .tbody .tr:hover {
   background-color: rgba(0, 0, 0, 0.075);
 }
-bs-table.thead-dark .th {
+ss-table.thead-dark .th {
   color: #fff;
   background-color: #212529;
   border-color: #32383e;
 }
-bs-table.thead-light .th {
+ss-table.thead-light .th {
   color: #495057;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
-bs-table.table-dark {
+ss-table.table-dark {
   color: #fff;
   background-color: #212529;
 }
-bs-table.table-dark .th,
-bs-table.table-dark .td,
-bs-table.table-dark .thead .th {
+ss-table.table-dark .th,
+ss-table.table-dark .td,
+ss-table.table-dark .thead .th {
   border-color: #32383e;
 }
-bs-table.table-dark.table-striped .tbody .tr:nth-of-type(odd) {
+ss-table.table-dark.table-striped .tbody .tr:nth-of-type(odd) {
   background-color: rgba(255, 255, 255, 0.05);
 }
-bs-table.table-dark.table-hover .tbody .tr:hover {
+ss-table.table-dark.table-hover .tbody .tr:hover {
   background-color: rgba(255, 255, 255, 0.075);
 }
 

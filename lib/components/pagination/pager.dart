@@ -55,7 +55,7 @@ class BsPagerComponent {
   /// emits that the total pages value has changed
   @Output() Stream<int> get totalPagesChange => _totalPagesChangeCtrl.stream;
 
-  int _itemsPerPage = 10;
+  int _itemsPerPage = 1000;
 
   /// gets the maximum number of items per page. If value less than 1 will display all items on one page
   get itemsPerPage => _itemsPerPage;
