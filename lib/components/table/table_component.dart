@@ -168,7 +168,7 @@ class BsTableComponent implements OnInit, OnDestroy {
         rowsAux.sort((r1, r2) {
           var orderBy = column.orderBy ?? column.fieldName; //ext=string
           print("orderBy ==" + orderBy);
-          var comparison;
+          var comparison; 
           if (orderBy is String &&
               (orderBy != "batchId" ||
                   orderBy != "createdDate" ||
