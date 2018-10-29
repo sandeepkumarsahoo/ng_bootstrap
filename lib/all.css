@@ -11852,19 +11852,19 @@ ss-table {
   display: block;
   overflow-x: auto;
   /*
-
-  // Table backgrounds
-  //
-  // Exact selectors below required to override `.table-striped` and prevent
-  // inheritance to nested tables.
-
-  @each $color, $value in $theme-colors {
-    @include table-row-variant($color, theme-color-level($color, -9));
-  }
-
-  @include table-row-variant(active, $table-active-bg);
-
-  */
+  
+    // Table backgrounds
+    //
+    // Exact selectors below required to override `.table-striped` and prevent
+    // inheritance to nested tables.
+  
+    @each $color, $value in $theme-colors {
+      @include table-row-variant($color, theme-color-level($color, -9));
+    }
+  
+    @include table-row-variant(active, $table-active-bg);
+  
+    */
 }
 ss-table .tr {
   display: flex;

@@ -169,24 +169,22 @@ class BsTableComponent implements OnInit, OnDestroy {
           var orderBy = column.orderBy ?? column.fieldName; //ext=string
           print("orderBy ==" + orderBy);
           var comparison; 
-          if (orderBy is String &&
-              (orderBy != "batchId" &&
-                  orderBy != "createdDate" &&
-                  orderBy != "scheduledDate")) {
-            comparison = getData(r1, orderBy).compareTo(getData(r2, orderBy));
-          } else if (orderBy is Function) {
+         if (orderBy is Function) {
             comparison = orderBy(r1, r2);
           } else if (orderBy is String && orderBy == "batchId") {
-            int s1 = r1['ext'];
-            int s2 = r2['ext'];
+            print("sort by batchId");
+            int s1 = r1['batchId'];
+            int s2 = r2['batchId'];
             comparison = s1.compareTo(s2);
           } else if (orderBy is String && orderBy == "scheduledDate") {
+            print("sort by scheduledDate");
             String date1 = r1['scheduledDate'];
             String date2 = r2['scheduledDate'];
             DateTime beginDate = DateTime.parse(date1);
             DateTime endDate = DateTime.parse(date2);
             comparison = beginDate.compareTo(endDate);
           } else if (orderBy is String && orderBy == "createdDate") {
+            print("sort by createdDate");
             String date1 = r1['createdDate'];
             String date2 = r2['createdDate'];
             DateTime beginDate = DateTime.parse(date1);
