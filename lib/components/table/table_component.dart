@@ -166,30 +166,12 @@ class BsTableComponent implements OnInit, OnDestroy {
       }
       if (column.sort != 'NONE') {
         rowsAux.sort((r1, r2) {
-          var orderBy = column.orderBy ?? column.fieldName; //ext=string
-          print("orderBy ==" + orderBy);
-          var comparison; 
-         if (orderBy is Function) {
+          var orderBy = column.orderBy ?? column.fieldName;
+          int comparison;
+          if (orderBy is Comparable) {
+            comparison = getData(r1, orderBy).compareTo(getData(r2, orderBy));
+          } else if (orderBy is Function) {
             comparison = orderBy(r1, r2);
-          } else if (orderBy is String && orderBy == "batchId") {
-            print("sort by batchId");
-            int s1 = r1['batchId'];
-            int s2 = r2['batchId'];
-            comparison = s1.compareTo(s2);
-          } else if (orderBy is String && orderBy == "scheduledDate") {
-            print("sort by scheduledDate");
-            String date1 = r1['scheduledDate'];
-            String date2 = r2['scheduledDate'];
-            DateTime beginDate = DateTime.parse(date1);
-            DateTime endDate = DateTime.parse(date2);
-            comparison = beginDate.compareTo(endDate);
-          } else if (orderBy is String && orderBy == "createdDate") {
-            print("sort by createdDate");
-            String date1 = r1['createdDate'];
-            String date2 = r2['createdDate'];
-            DateTime beginDate = DateTime.parse(date1);
-            DateTime endDate = DateTime.parse(date2);
-            comparison = beginDate.compareTo(endDate);
           } else {
             throw new Exception(
                 'The type of `orderBy` or `fieldName` is incorrect.'
@@ -229,8 +211,15 @@ class BsTableComponent implements OnInit, OnDestroy {
   /// this function should return the value corresponding to `row['address']['street']`
   /// if the value of the row is a [Map], or `row.address.street` if the value of the row
   /// is a complex object.
-  String getData(dynamic row, String fieldName) =>
-      fieldName.split('.').fold(row, _getDataFn).toString();
+  // String getData(dynamic row, String fieldName) =>
+  //    fieldName.split('.').fold(row, _getDataFn).toString();
+  Comparable getData(dynamic row, String fieldName) {
+    var data = fieldName.split('.').fold(row, _getDataFn);
+    if (data is Comparable) {
+      return data;
+    }
+    return data.toString();
+  }
 
   void setData(dynamic row, String fieldName, dynamic value) {
     if (fieldName.contains('.')) {

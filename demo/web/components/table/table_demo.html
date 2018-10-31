@@ -22,8 +22,8 @@
         <bs-column header="Name" fieldName="name" ngClass="text-info"></bs-column>
         <bs-column header="Position" fieldName="position" sort="NO_SORTABLE"></bs-column>
         <bs-column header="Office" fieldName="office" sort="ASC"></bs-column>
-        <bs-column header="Extn." orderBy="ext" fieldName="ext" sort="NONE"></bs-column>
-        <bs-column header="Start date" orderBy="startDate" fieldName="startDate"></bs-column>
+        <bs-column header="Batch Id" orderBy="batchId" fieldName="batchId" sort="NONE"></bs-column>
+        <bs-column header="scheduled date" orderBy="scheduledDate" fieldName="scheduledDate"></bs-column>
         <bs-column header="Salary ($)" fieldName="salary" orderBy="salary" [ngStyle]="{width: '120px', flex: 'none'}">
           <template let-row>U$ {{row['salary']}}</template>
           <template bs-column-editor let-row>
@@ -49,7 +49,7 @@
         <bs-column header="Name" fieldName="name"></bs-column>
         <bs-column header="Position" fieldName="position" sort="NO_SORTABLE"></bs-column>
         <bs-column header="Office" fieldName="office" sort="ASC"></bs-column>
-        <bs-column header="Extn." fieldName="ext" sort="NONE"></bs-column>
+        <bs-column header="Extn." fieldName="batchId" sort="NONE"></bs-column>
         <bs-column header="Start date" fieldName="startDate"></bs-column>
         <bs-column header="Salary ($)" fieldName="salary" orderBy="salary" [ngStyle]="{width: '120px', flex: 'none'}">
           <template let-row>U$ {{row.salary}}</template>
